@@ -1,0 +1,26 @@
+{
+  "name": "03-budgety-04",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BogdanConstantinDEV/budget-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BogdanConstantinDEV/budget-calculator/issues"
+  },
+  "homepage": "https://github.com/BogdanConstantinDEV/budget-calculator#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5"
+  }
+}
