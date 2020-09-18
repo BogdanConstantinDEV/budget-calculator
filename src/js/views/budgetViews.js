@@ -20,7 +20,7 @@ const DOMstrings = {
 export function getInput() {
     const type = document.querySelector(DOMstrings.inputType).value  // inc || exp
     const description = document.querySelector(DOMstrings.inputDescription).value
-    const value = parseFloat(document.querySelector(DOMstrings.inputValue).value)
+    const value = document.querySelector(DOMstrings.inputValue).value
     return { type, description, value }
 }
 
@@ -31,9 +31,9 @@ export function getDomStrings() {
 // add new Item to HTML
 export function addItemToHTML(newItem) {
     const markupInc = `
-        <div class="item clearfix" id="${newItem.id}">
+        <div class="item" id="${newItem.id}">
             <div class="item__description">${newItem.description}</div>
-            <div class="right clearfix">
+            <div class="right">
                 <div class="item__value">${formatNumber(newItem.value, 'inc')}</div>
                 <div class="item__delete">
                     <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
@@ -42,9 +42,9 @@ export function addItemToHTML(newItem) {
         </div>
     `
     const markupExp = `
-        <div class="item clearfix" id="${newItem.id}">
+        <div class="item" id="${newItem.id}">
             <div class="item__description">${newItem.description}</div>
-            <div class="right clearfix">
+            <div class="right">
                 <div class="item__value">${formatNumber(newItem.value, 'exp')}</div>
                 <div class="item__percentage">${newItem.percentage}%</div>
                 <div class="item__delete">

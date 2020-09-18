@@ -1,0 +1,101 @@
+.container {
+    width: 1000px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    
+    & h2 {
+        text-transform: uppercase;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
+.income__title {
+    color: var(--clr-green);
+}
+.expenses__title {
+    color: var(--clr-red);
+}
+
+.item {
+    padding: 13px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    
+
+    &:first-child {
+         border-top: 1px solid #e7e7e7;
+    }
+    &:nth-child(even) {
+         background-color: #f7f7f7;
+    }
+
+    & .right{
+        display: flex;
+    }
+    &__value {
+        transition: transform 0.3s;
+    }
+
+    &__percentage {
+        margin-left: 2rem;
+        transition: transform 0.3s;
+        font-size: 1.1rem;
+        background-color: var(--clr-red-lighten);
+        padding: .3rem;
+        border-radius: .3rem;
+        width: 3.2rem;
+        text-align: center;
+    }
+    &__delete--btn {
+        font-size: 22px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1;
+        display: none;
+
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+    &:hover &__delete--btn { display: block; } 
+    &:hover &__value { transform: translateX(-2rem); }
+    &:hover &__percentage { transform: translateX(-2rem); }
+
+}
+.income {
+    & .right, 
+    & .item__delete--btn {
+        color: var(--clr-green);
+    }
+}
+.expenses {
+    & .right,
+    & .item__delete--btn {
+        color: var(--clr-red);
+    }
+}
+
+.unpaid {
+    background-color: var(--clr-red-lighten) !important;
+    cursor: pointer;
+    color: var(--clr-red);
+
+    & .item__percentage {
+         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); 
+    }
+
+    &:hover .item__description {
+         font-weight: 900; 
+    }
+}
+

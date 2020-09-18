@@ -1,5 +1,5 @@
 import '@babel/polyfill'
-import '../styles/style.css'
+import '../styles/main.scss'
 
 
 import * as budgetViews from './views/budgetViews'
@@ -12,7 +12,7 @@ function setupEventListeners() {
 
     // Add Listener
     document
-        .querySelector('.add__btn')
+        .querySelector(DOMstrings.addBtn)
         .addEventListener('click', ctrlAddItem)
 
     document
@@ -46,11 +46,12 @@ function ctrlAddItem() {
 
     // get field input data
     const inputData = budgetViews.getInput()
+    if (inputData.description === '' || inputData.value === '') return
 
     // add item to budget controller
     const newItem = inputData.type === 'inc'
-        ? new budgetModel.Income(inputData.type, inputData.description, inputData.value)
-        : new budgetModel.Expense(inputData.type, inputData.description, inputData.value)
+        ? new budgetModel.Income(inputData.type, inputData.description, inputData.value * 1)
+        : new budgetModel.Expense(inputData.type, inputData.description, inputData.value * 1)
     budgetModel.addItem(newItem)
 
     // add the item to the UI

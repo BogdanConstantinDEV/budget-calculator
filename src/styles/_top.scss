@@ -1,0 +1,66 @@
+.top {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url(../images//back.png);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 40vh;
+    color: var(--clr-text-light);
+}
+
+.budget {
+
+    &__value {
+        display:grid;
+        justify-content: center;
+    }
+    &__income,
+    &__expenses {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 2rem;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+        
+        &--text {
+            text-transform: uppercase;
+            color: var(--clr-text-dark);
+            font-size: 1.4rem;
+        }
+        & .right {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+            grid-column-gap: .5rem;
+        }
+    }
+    &__income {
+        background-color: var(--clr-green);
+        &--percentage {
+            width: 4rem;
+        }
+
+
+
+    }
+    &__expenses {
+        background-color: var(--clr-red);   
+
+        &--percentage {
+            background-color: var(--clr-red-lighten);
+            text-align: center;
+            font-size: 1.4rem;
+            width: 4rem;
+            display: flex;
+            align-content: flex-start;
+            justify-content: center;
+            color: var(--clr-text-dark);
+        }
+
+    }
+}

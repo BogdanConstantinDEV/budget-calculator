@@ -1,0 +1,59 @@
+.add {
+    height: 10vh;
+    background-color: #dddddd;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.6rem;
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__type,
+    &__description,
+    &__value {
+        border: 1px solid var(--clr-text-dark);
+        border-radius: .5rem;
+        font-size: inherit;
+        padding: 1rem;
+        margin: 0 .3rem;
+        font-family: inherit;
+        outline: none;
+        transition: all 300ms;
+    }
+
+    &__description:focus,
+    &__value:focus,
+    &__type:focus {
+        border: 1px solid var(--clr-green);
+        outline: none;
+    }
+
+    &__value {
+        width: 8rem;
+    }
+    &__description {
+        width: 30rem;
+    }
+
+    &__btn {
+        border: none;
+        font-size: 3.2rem;
+        color: var(--clr-text-dark);
+        background-color: transparent;
+        margin-left: .5rem;
+        cursor: pointer;
+        outline: none;
+        transition: all 100ms;
+
+        &:active {
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        &:focus {
+            transform: scale(1.1);
+        }
+    }
+}
